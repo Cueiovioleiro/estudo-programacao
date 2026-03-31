@@ -1,1 +1,94 @@
-body {background-color: rgba(66, 66, 66, 0.411);}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para o corpo da página */
+body {
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos para o modo escuro no corpo */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Estilos para o cabeçalho */
+header {
+  background: linear-gradient(135deg, #cadcec, #df8919);
+  color: rgb(95, 94, 94);
+  padding: 60px 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+// Estilo para o modo escuro
+body.dark header {
+  background: linear-gradient(135deg, #333, #555);
+  color: #ffffff;
+}
+
+/* Estilos gerais para botões */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background: #686664;
+  color: #fcfcfc;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Estilos para a seção de benefícios */
+.beneficios {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+/* Estilos para os cards */
+.card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  transition: background-color 0.3s;
+}
+
+/* Estilos para os cards no modo escuro */
+body.dark .card {
+  background: #333;
+  color: #ffffff;
+}
+
+/* Estilos responsivos para telas menores */
+@media (max-width: 768px) {
+  .beneficios {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Estilos para o container do botão de modo escuro */
+.func {
+  position: fixed;
+  top: 20px;
+  right: 50px;
+  color: #fcfcfc;
+  padding: 5px 5px;
+    background: #686664;
+    border-radius: 10px;
+}
+
+/* Estilos específicos para o botão de modo escuro */
+#dk {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+}
