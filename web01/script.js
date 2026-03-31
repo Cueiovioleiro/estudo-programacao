@@ -1,22 +1,31 @@
-// Seleciona o botão de modo escuro pelo ID
-const darkButton = document.getElementById('dk');
-// Seleciona o elemento body da página
-const body = document.body;
+// script.js - Scripts de lógica geral
 
-// Inicializa com o modo escuro ativado
-body.classList.add('dark');
-darkButton.textContent = 'on';
+// Seleciona o botão "Começar Agora"
+const ctaButton = document.getElementById('cta');
 
-// Adiciona um ouvinte de evento de clique ao botão
-darkButton.addEventListener('click', () => {
-    // Alterna a classe 'dark' no body para ativar/desativar o modo escuro
-    body.classList.toggle('dark');
-    // Verifica se o modo escuro está ativado
-    if (body.classList.contains('dark')) {
-        // Muda o texto do botão para 'on'
-        darkButton.textContent = 'on';
-    } else {
-        // Muda o texto do botão para 'dark'
-        darkButton.textContent = 'dark';
-    }
-});
+// Adiciona ouvinte de evento para carregar nova página
+if (ctaButton) {
+    ctaButton.addEventListener('click', () => {
+        window.location.href = 'cursos.html';
+    });
+}
+
+// Manipulação básica dos formulários de login e cadastro
+const loginFormEl = document.getElementById('login');
+const registerFormEl = document.getElementById('register');
+
+if (loginFormEl) {
+    loginFormEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Login realizado com sucesso!');
+        // falta lógica real de autenticação, como validação e verificação de credenciais
+    });
+}
+
+if (registerFormEl) {
+    registerFormEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Cadastro realizado com sucesso!');
+        // falta lógica real de registro, como validação e armazenamento de dados
+    });
+}

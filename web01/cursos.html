@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro - evilaliance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-tabs">
+            <button id="login-tab" class="tab active">Login</button>
+            <button id="register-tab" class="tab">Cadastro</button>
+        </div>
+
+        <div id="login-form" class="form-container active">
+            <h2>Entrar</h2>
+            <form id="login">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+
+        <div id="register-form" class="form-container">
+            <h2>Cadastrar</h2>
+            <form id="register">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Confirmar Senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Botão de configurações -->
+    <button id="settings-btn" class="settings-btn">⚙️</button>
+
+    <!-- Painel de configurações -->
+    <div id="settings-panel" class="settings-panel">
+        <h3>Configurações</h3>
+        <div class="setting-item">
+            <label for="dark-toggle">Modo Escuro:</label>
+            <button id="dk" type="button">on</button>
+        </div>
+        <button id="close-settings">Fechar</button>
+    </div>
+
+</body>
+<script src="script.js"></script>
+<script src="ui.js"></script>
+</html>
