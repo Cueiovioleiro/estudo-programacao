@@ -26,7 +26,7 @@ header {
   transition: background-color 0.3s, color 0.3s;
 }
 
-// Estilo para o modo escuro
+/* Estilos para o cabeçalho no modo escuro */
 body.dark header {
   background: linear-gradient(135deg, #333, #555);
   color: #ffffff;
