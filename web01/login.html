@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="auth-container">
+        <p class="auth-back"><a href="index.html">← Voltar ao início</a></p>
         <div class="auth-tabs">
             <button id="login-tab" class="tab active">Login</button>
             <button id="register-tab" class="tab">Cadastro</button>
@@ -41,13 +42,13 @@
     <div id="settings-panel" class="settings-panel">
         <h3>Configurações</h3>
         <div class="setting-item">
-            <label for="dark-toggle">Modo Escuro:</label>
-            <button id="dk" type="button">on</button>
+            <label for="dk">Modo escuro</label>
+            <button id="dk" type="button">Claro</button>
         </div>
         <button id="close-settings">Fechar</button>
     </div>
 
+    <script type="module" src="auth-supabase.js"></script>
+    <script src="ui.js"></script>
 </body>
-<script src="script.js"></script>
-<script src="ui.js"></script>
 </html>

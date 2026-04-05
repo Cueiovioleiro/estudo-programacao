@@ -7,10 +7,13 @@ const settingsBtn = document.getElementById('settings-btn');
 const settingsPanel = document.getElementById('settings-panel');
 const closeSettings = document.getElementById('close-settings');
 
-// Inicializa com o modo escuro ativado
+function syncDarkButtonLabel() {
+    if (!darkButton || !body) return;
+    darkButton.textContent = body.classList.contains('dark') ? 'Escuro' : 'Claro';
+}
+
 if (body) {
-    body.classList.add('dark');
-    if (darkButton) darkButton.textContent = 'on';
+    syncDarkButtonLabel();
 }
 
 // Função para alternar o painel de configurações
@@ -38,16 +41,8 @@ if (closeSettings) {
 if (darkButton) {
     darkButton.addEventListener('click', () => {
         if (body) {
-            // Alterna a classe 'dark' no body para ativar/desativar o modo escuro
             body.classList.toggle('dark');
-            // Verifica se o modo escuro está ativado
-            if (body.classList.contains('dark')) {
-                // Muda o texto do botão para 'on'
-                darkButton.textContent = 'white';
-            } else {
-                // Muda o texto do botão para 'dark'
-                darkButton.textContent = 'dark';
-            }
+            syncDarkButtonLabel();
         }
     });
 }
