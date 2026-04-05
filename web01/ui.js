@@ -47,24 +47,4 @@ if (darkButton) {
     });
 }
 
-// Código para as abas de login e cadastro
-const loginTab = document.getElementById('login-tab');
-const registerTab = document.getElementById('register-tab');
-const loginForm = document.getElementById('login-form');
-const registerForm = document.getElementById('register-form');
-
-if (loginTab && registerTab) {
-    loginTab.addEventListener('click', () => {
-        loginTab.classList.add('active');
-        registerTab.classList.remove('active');
-        if (loginForm) loginForm.classList.add('active');
-        if (registerForm) registerForm.classList.remove('active');
-    });
-
-    registerTab.addEventListener('click', () => {
-        registerTab.classList.add('active');
-        loginTab.classList.remove('active');
-        if (registerForm) registerForm.classList.add('active');
-        if (loginForm) loginForm.classList.remove('active');
-    });
-}
+// Abas login/cadastro: ver js/pages/login.page.js (carregado em login.html)

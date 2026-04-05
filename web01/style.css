@@ -139,6 +139,12 @@ body.dark .auth-back a {
   flex-direction: column;
 }
 
+.form-container .auth-label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
 .form-container input {
   margin-bottom: 15px;
   padding: 10px;
@@ -246,6 +252,10 @@ body.dark .tab {
 
 body.dark .tab.active {
   background: #777;
+}
+
+body.dark .form-container .auth-label {
+  color: #ccc;
 }
 
 body.dark .form-container input {

@@ -26,10 +26,12 @@
         <div id="register-form" class="form-container">
             <h2>Cadastrar</h2>
             <form id="register">
-                <input type="text" placeholder="Nome" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Senha" required>
-                <input type="password" placeholder="Confirmar Senha" required>
+                <input type="text" id="register-name" name="full_name" placeholder="Nome" required autocomplete="name">
+                <input type="email" id="register-email" name="email" placeholder="Email" required autocomplete="email">
+                <label for="register-birth" class="auth-label"> </label>
+                <input type="date" id="register-birth" name="birth_date" required autocomplete="bday">
+                <input type="password" id="register-password" name="password" placeholder="Senha" required autocomplete="new-password" minlength="6">
+                <input type="password" id="register-password2" name="password_confirm" placeholder="Confirmar Senha" required autocomplete="new-password" minlength="6">
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
@@ -48,7 +50,7 @@
         <button id="close-settings">Fechar</button>
     </div>
 
-    <script type="module" src="auth-supabase.js"></script>
+    <script type="module" src="js/pages/login.page.js"></script>
     <script src="ui.js"></script>
 </body>
 </html>

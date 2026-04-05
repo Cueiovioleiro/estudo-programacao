@@ -10,4 +10,4 @@ if (ctaButton) {
     });
 }
 
-// Login/cadastro: ver auth-supabase.js (carregado só em login.html)
+// Login/cadastro: ver js/pages/login.page.js (carregado só em login.html)
