@@ -35,5 +35,4 @@ Se `supabase-config.js` estiver em falta ou ainda tiver placeholders (`SEU-PROJE
 - Não adicionar `web01/supabase-config.js` ao repositório (já ignorado).
 - Comunicar na equipa qual branch usar e fazer commits/push com mensagens claras para a outra pessoa acompanhar.
 
----
-*Estruturas antigas do README (`exercicios/`, `projetos/`) foram removidas da descrição até existirem no repositório.*
+
