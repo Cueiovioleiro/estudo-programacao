@@ -3,47 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aliance01</title>
+    <title>DevFlow - Aprenda Programação na Prática</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-    <h1>Bem-vindo ao nosso site</h1>
-    <p>aprenda projetos reais </p>
-    <button id="cta">Começar Agora</button>
-  </header>
 
-  <section class="beneficios">
-    <div class="card">
-      <h2>🚀 Rápido</h2>
-      <p>Aprenda de forma prática</p>
-    </div>
+    <header class="hero">
+        <h1>Aprenda a programar de verdade</h1>
+        <p class="subtitle">Construa projetos reais em dupla, use GitHub e monte um portfólio que impressiona.</p>
+        <button onclick="irParaLogin()" class="btn-primary">Começar Agora Grátis</button>
+    </header>
 
-    <div class="card">
-      <h2>💻 Projetos</h2>
-      <p>Construa seu portfólio</p>
-    </div>
+    <section class="beneficios">
+        <h2>Por que estudar com a gente?</h2>
+        
+        <div class="cards">
+            <div class="card">
+                <h3>Projetos Reais</h3>
+                <p>Landing pages, sistemas com login, integração com banco de dados e muito mais.</p>
+            </div>
+            <div class="card">
+                <h3>Trabalho em Dupla</h3>
+                <p>Colaboração em tempo real usando Git e GitHub. Aprenda versionamento enquanto desenvolve.</p>
+            </div>
+            <div class="card">
+                <h3>Portfólio Profissional</h3>
+                <p>Todo projeto feito aqui pode ir direto pro seu portfólio.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="card">
-      <h2>💰 Oportunidade</h2>
-      <p>Prepare-se</p>
-    </div>
-  </section>
+    <section class="cta">
+        <h2>Pronto para dar o próximo passo na programação?</h2>
+        <button onclick="irParaLogin()" class="btn-primary">Criar minha conta agora</button>
+    </section>
 
-  <footer>
-    <p>© 2026 - Todos os direitos reservados</p>
-  </footer>
-  <button id="settings-btn" class="settings-btn">⚙️</button>
-  <div id="settings-panel" class="settings-panel">
-    <h3>Configurações</h3>
-    <div class="setting-item">
-      <label for="dk">Modo escuro</label>
-      <button id="dk" type="button">Claro</button>
-    </div>
-    <button id="close-settings">Fechar</button>
-  </div>
- <script src="script.js"></script>
-<script src="ui.js"></script>
+    <footer>
+        <p>Projeto de estudos em dupla - AlecsSantana e Cueiovioleiro</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
