@@ -1,70 +1,31 @@
-// ui.js - Scripts relacionados à interface e CSS
+// ui.js - Funções de interface e navegação
 
-// Seleciona os elementos de UI
-const darkButton = document.getElementById('dk');
-const body = document.body;
-const settingsBtn = document.getElementById('settings-btn');
-const settingsPanel = document.getElementById('settings-panel');
-const closeSettings = document.getElementById('close-settings');
-
-function syncDarkButtonLabel() {
-    if (!darkButton || !body) return;
-    darkButton.textContent = body.classList.contains('dark') ? 'Escuro' : 'Claro';
-}
-
-if (body) {
-    syncDarkButtonLabel();
-}
-
-// Função para alternar o painel de configurações
-function toggleSettings() {
-  if (settingsPanel) {
-    if (settingsPanel.style.display === 'none' || settingsPanel.style.display === '') {
-      settingsPanel.style.display = 'block';
+function toggleForm() {
+    const loginForm = document.getElementById('loginForm');
+    const isLogin = loginForm.getAttribute('data-mode') === 'login';
+    
+    if (isLogin) {
+        // Mudar para modo cadastro
+        document.querySelector('h2').textContent = 'Criar conta';
+        document.getElementById('toggleLink').textContent = 'Já tenho conta';
+        loginForm.setAttribute('data-mode', 'register');
     } else {
-      settingsPanel.style.display = 'none';
+        // Mudar para modo login
+        document.querySelector('h2').textContent = 'Entrar na conta';
+        document.getElementById('toggleLink').textContent = 'Criar conta';
+        loginForm.setAttribute('data-mode', 'login');
     }
-  }
 }
 
-// Adiciona ouvintes de evento para configurações
-if (settingsBtn) {
-    settingsBtn.addEventListener('click', toggleSettings);
-}
-if (closeSettings) {
-    closeSettings.addEventListener('click', () => {
-        if (settingsPanel) settingsPanel.style.display = 'none';
-    });
-}
-
-// Adiciona um ouvinte de evento de clique ao botão de modo escuro
-if (darkButton) {
-    darkButton.addEventListener('click', () => {
-        if (body) {
-            body.classList.toggle('dark');
-            syncDarkButtonLabel();
-        }
-    });
-}
-
-// Código para as abas de login e cadastro
-const loginTab = document.getElementById('login-tab');
-const registerTab = document.getElementById('register-tab');
-const loginForm = document.getElementById('login-form');
-const registerForm = document.getElementById('register-form');
-
-if (loginTab && registerTab) {
-    loginTab.addEventListener('click', () => {
-        loginTab.classList.add('active');
-        registerTab.classList.remove('active');
-        if (loginForm) loginForm.classList.add('active');
-        if (registerForm) registerForm.classList.remove('active');
-    });
-
-    registerTab.addEventListener('click', () => {
-        registerTab.classList.add('active');
-        loginTab.classList.remove('active');
-        if (registerForm) registerForm.classList.add('active');
-        if (loginForm) loginForm.classList.remove('active');
-    });
+function mostrarMensagem(texto, tipo) {
+    const msg = document.createElement('div');
+    msg.textContent = texto;
+    msg.style.padding = '12px';
+    msg.style.margin = '15px 0';
+    msg.style.borderRadius = '8px';
+    msg.style.color = tipo === 'sucesso' ? '#155724' : '#721c24';
+    msg.style.backgroundColor = tipo === 'sucesso' ? '#d4edda' : '#f8d7da';
+    document.querySelector('.login-container').appendChild(msg);
+    
+    setTimeout(() => msg.remove(), 4000);
 }
