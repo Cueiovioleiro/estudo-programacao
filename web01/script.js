@@ -1,13 +1,11 @@
-// script.js - Scripts de lógica geral
-
-// Seleciona o botão "Começar Agora"
-const ctaButton = document.getElementById('cta');
-
-// Adiciona ouvinte de evento para carregar nova página
-if (ctaButton) {
-    ctaButton.addEventListener('click', () => {
-        window.location.href = 'login.html';
-    });
+function irParaLogin() {
+    window.location.href = "login.html";
 }
 
-// Login/cadastro: ver auth-supabase.js (carregado só em login.html)
+// Função para verificar se o usuário está logado (usada em páginas futuras)
+function verificarLogin() {
+    const user = localStorage.getItem("user");
+    if (!user) {
+        window.location.href = "login.html";
+    }
+}
