@@ -1,281 +1,109 @@
-
-/* ========================================
-   RESET E ESTILOS BASE
-======================================== */
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  text-align: center;
-  transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
+.hero {
+    background-color: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
 }
 
-/* ========================================
-   CABEÇALHO E SEÇÕES PRINCIPAIS
-======================================== */
-
-header {
-  background: linear-gradient(135deg, #cadcec, #df8919);
-  color: rgb(88, 79, 59);
-  padding: 60px 20px;
-  transition: background-color 0.3s, color 0.3s;
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
-#cta {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #686664;
-  color: #fcfcfc;
-  font-size: 16px;
-  text-transform: uppercase;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.subtitle {
+    font-size: 22px;
+    margin-bottom: 30px;
+    opacity: 0.9;
 }
 
-#cta:hover {
-  background: #555;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+.btn-primary {
+    background-color: #00b4d8;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0096b8;
 }
 
 .beneficios {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.beneficios h2 {
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .card {
-  background: #f4f4f4;
-  padding: 20px;
-  border-radius: 10px;
-  width: 200px;
-  transition: background-color 0.3s;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.cta {
+    background-color: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta h2 {
+    margin-bottom: 30px;
 }
 
 footer {
-  padding: 20px;
-  
+    text-align: center;
+    padding: 30px;
+    background-color: #222;
+    color: #aaa;
+    font-size: 14px;
 }
 
-/* ========================================
-   FORMULÁRIOS DE AUTENTICAÇÃO
-======================================== */
-
-.auth-back {
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.auth-back a {
-  color: #df8919;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.auth-back a:hover {
-  text-decoration: underline;
-}
-
-body.dark .auth-back a {
-  color: #f0a040;
-}
-
-.auth-container {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 30px;
-  background: #464242;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: background-color 0.3s;
-}
-
-.auth-tabs {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.tab {
-  flex: 1;
-  padding: 10px;
-  background: #e0e0e0;
-  font-size: 16px;
-  border-radius: 5px 5px 0 0;
-}
-
-.tab.active {
-  background: #686664;
-  color: #fcfcfc;
-}
-
-.form-container {
-  display: none;
-}
-
-.form-container.active {
-  display: block;
-}
-
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.form-container form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-container input {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.3s;
-}
-
-.form-container input:focus {
-  outline: none;
-  border-color: #686664;
-}
-
-.form-container button[type="submit"] {
-  padding: 12px;
-  background: #686664;
-  color: #fcfcfc;
-  font-size: 16px;
-}
-
-.form-container button[type="submit"]:hover {
-  background: #555;
-}
-
-/* ========================================
-   PAINEL DE CONFIGURAÇÕES
-======================================== */
-
-.settings-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px;
-  background: #686664;
-  color: #fcfcfc;
-  border-radius: 50%;
-  font-size: 18px;
-  z-index: 1000;
-}
-
-.settings-panel {
-  position: fixed;
-  top: 70px;
-  right: 20px;
-  background: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  display: none;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.setting-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.setting-item label {
-  font-weight: bold;
-}
-
-#dk {
-  padding: 8px 16px;
-  font-size: 14px;
-}
-
-#close-settings {
-  width: 100%;
-  margin-top: 10px;
-}
-
-/* ========================================
-   MODO ESCURO
-======================================== */
-
-body.dark {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-body.dark header {
-  background: linear-gradient(135deg, #333, #cf7623);
-  color: #ffffff;
-}
-
-body.dark .card {
-  background: #333;
-  color: #ffffff;
-}
-
-body.dark .auth-container {
-  background: #333;
-  color: #ffffff;
-}
-
-body.dark .tab {
-  background: #555;
-  color: #ffffff;
-}
-
-body.dark .tab.active {
-  background: #777;
-}
-
-body.dark .form-container input {
-  background: #444;
-  color: #ffffff;
-  border-color: #666;
-}
-
-body.dark .settings-panel {
-  background: #333;
-  color: #ffffff;
-  border-color: #555;
-}
-
-/* ========================================
-   RESPONSIVO
-======================================== */
-
+/* Responsivo */
 @media (max-width: 768px) {
-  .beneficios {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .auth-container {
-    margin: 50px 20px;
-  }
-
-  .settings-panel {
-    right: 10px;
-    width: calc(100vw - 20px);
-  }
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .subtitle {
+        font-size: 18px;
+    }
+    
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
 }
