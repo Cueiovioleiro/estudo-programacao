@@ -9,12 +9,22 @@
 <body>
 
     <div class="login-container">
-        <h2>Entrar na conta</h2>
+        <h2 id="formTitle">Entrar na conta</h2>
         
-        <form id="loginForm">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Senha" required>
+        <!-- Formulário de Login -->
+        <form id="login">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Senha" required>
             <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+
+        <!-- Formulário de Cadastro (inicialmente oculto) -->
+        <form id="register" style="display:none;">
+            <input type="text" placeholder="Nome Completo" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="password" placeholder="Confirmar Senha" required>
+            <button type="submit" class="btn-primary">Criar Conta</button>
         </form>
 
         <p class="toggle-text">
@@ -23,8 +33,7 @@
         </p>
     </div>
 
+    <script type="module" src="auth-supabase.js"></script>
     <script src="script.js"></script>
-    <script src="auth-supabase.js"></script>
-    <script src="ui.js"></script>
 </body>
 </html>
