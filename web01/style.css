@@ -1,3 +1,15 @@
+:root {
+    --primary-color: #00b4d8;
+    --primary-hover: #0096b8;
+    --dark-bg: #1a1a2e;
+    --light-bg: #f8f9fa;
+    --text-dark: #333;
+    --text-light: #aaa;
+    --auth-msg-ok: #22c55e;
+    --auth-msg-error: #f87171;
+    --border-color: #ddd;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +19,12 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-dark);
 }
 
+/* Header/Hero */
 .hero {
-    background-color: #1a1a2e;
+    background-color: var(--dark-bg);
     color: white;
     text-align: center;
     padding: 120px 20px 80px;
@@ -28,23 +41,26 @@ body {
     opacity: 0.9;
 }
 
+/* Botões */
 .btn-primary {
-    background-color: #00b4d8;
+    background-color: var(--primary-color);
     color: white;
     padding: 16px 32px;
     font-size: 18px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #0096b8;
+    background-color: var(--primary-hover);
 }
 
+/* Seção Benefícios */
 .beneficios {
     padding: 80px 20px;
-    background-color: #f8f9fa;
+    background-color: var(--light-bg);
     text-align: center;
 }
 
@@ -74,8 +90,9 @@ body {
     font-size: 22px;
 }
 
+/* CTA Section */
 .cta {
-    background-color: #1a1a2e;
+    background-color: var(--dark-bg);
     color: white;
     text-align: center;
     padding: 80px 20px;
@@ -85,12 +102,95 @@ body {
     margin-bottom: 30px;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 40px 20px;
     background-color: #222;
-    color: #aaa;
+    color: var(--text-light);
     font-size: 14px;
+}
+
+/* ===== LOGIN CONTAINER ===== */
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-bg);
+    font-size: 28px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-container input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 180, 216, 0.3);
+}
+
+.login-container button {
+    padding: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.toggle-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.toggle-text span {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.toggle-text span:hover {
+    text-decoration: underline;
+    color: var(--primary-hover);
+}
+
+#auth-message {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsivo */
@@ -98,11 +198,27 @@ footer {
     .hero h1 {
         font-size: 36px;
     }
+
     .subtitle {
         font-size: 18px;
     }
+
     .cards {
         flex-direction: column;
         align-items: center;
+    }
+
+    .login-container {
+        margin: 40px 20px;
+        padding: 30px 20px;
+    }
+
+    .login-container h2 {
+        font-size: 24px;
+    }
+
+    .btn-primary {
+        padding: 14px 24px;
+        font-size: 16px;
     }
 }
