@@ -8,6 +8,7 @@ import {
   validatePasswordMatch,
 } from "../services/auth.service.js";
 import { showAuthMessage } from "../ui/auth-feedback.js";
+import { initSettings } from "../ui/settings.js";
 
 function setRegisterBirthDateMax() {
   const birthInput = document.getElementById("register-birth");
@@ -41,6 +42,7 @@ function wireLoginTab() {
 }
 
 async function bootstrap() {
+  initSettings();
   wireLoginTab();
   setRegisterBirthDateMax();
 
@@ -71,8 +73,8 @@ async function bootstrap() {
         showAuthMessage(error.message, true);
         return;
       }
-      showAuthMessage("Sessão iniciada. A redirecionar…", false);
-      window.location.href = ROUTES.home;
+      showAuthMessage("Sessão iniciada. Abrindo…", false);
+      window.open(ROUTES.dashboard, "_blank");
     });
   }
 

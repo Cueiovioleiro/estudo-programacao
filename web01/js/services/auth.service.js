@@ -202,7 +202,7 @@ export async function updateProfile(supabase, profileData) {
 
     return supabase
       .from('profiles')
-      .upsert({ id: user.id, updated_at: new Date(), ...profileData );
+      .upsert({ id: user.id, updated_at: new Date(), ...profileData });
   }).catch(handleSupabaseError);
 }
 

@@ -167,7 +167,7 @@ export const loginValidator = new FormValidator()
   ])
   .addRule('password', [
     { validator: Validators.required, message: 'Senha é obrigatória' },
-    { validator: Validators.minLength.bind(null, null, 6), message: 'Senha deve ter pelo menos 6 caracteres' }
+    { validator: (v) => Validators.minLength(v, 6), message: 'Senha deve ter pelo menos 6 caracteres' }
   ]);
 
 /**
@@ -176,8 +176,8 @@ export const loginValidator = new FormValidator()
 export const registerValidator = new FormValidator()
   .addRule('fullName', [
     { validator: Validators.required, message: 'Nome completo é obrigatório' },
-    { validator: Validators.minLength.bind(null, null, 2), message: 'Nome deve ter pelo menos 2 caracteres' },
-    { validator: Validators.maxLength.bind(null, null, 100), message: 'Nome deve ter no máximo 100 caracteres' }
+    { validator: (v) => Validators.minLength(v, 2), message: 'Nome deve ter pelo menos 2 caracteres' },
+    { validator: (v) => Validators.maxLength(v, 100), message: 'Nome deve ter no máximo 100 caracteres' }
   ])
   .addRule('email', [
     { validator: Validators.required, message: 'Email é obrigatório' },
@@ -188,7 +188,7 @@ export const registerValidator = new FormValidator()
   ])
   .addRule('password', [
     { validator: Validators.required, message: 'Senha é obrigatória' },
-    { validator: Validators.minLength.bind(null, null, 6), message: 'Senha deve ter pelo menos 6 caracteres' },
+    { validator: (v) => Validators.minLength(v, 6), message: 'Senha deve ter pelo menos 6 caracteres' },
     { validator: Validators.strongPassword, message: 'Senha deve conter maiúscula, minúscula, número e caractere especial' }
   ])
   .addRule('passwordConfirm', [

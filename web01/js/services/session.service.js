@@ -45,14 +45,15 @@ class SessionService {
   }
 
   /**
-   * Verifica se o usuário está autenticado
+   * Verifica se o usuário está autenticado via Supabase
    * @returns {Promise<boolean>} True se o usuário estiver autenticado
    */
-  async isAuthenticated() {
+  async checkAuthenticated() {
     const supabase = getSupabase();
     if (!supabase) return false;
 
-    return await isAuthenticated(supabase);
+    const { data: { user } } = await getCurrentUser(supabase);
+    return !!user;
   }
 
   /**
