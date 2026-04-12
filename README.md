@@ -41,3 +41,4 @@ Se `supabase-config.js` estiver em falta ou ainda tiver placeholders (`SEU-PROJE
 
 ---
 *Estruturas antigas do README (`exercicios/`, `projetos/`) foram removidas da descrição até existirem no repositório.*
+test
